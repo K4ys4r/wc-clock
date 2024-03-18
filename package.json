@@ -1,6 +1,6 @@
 {
   "name": "@k4ys4r/wc-clock",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a web component starter Vite + JS",
   "type": "module",
   "files": [
