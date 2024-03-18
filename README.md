@@ -4,7 +4,7 @@ It is a web component written in `JavaScript/HTML/CSS` and without any
 dependencies. <br>
 `wc-clock` allows to display an Analog clock and be customized based on its _HTML_ attributes and _CSS_ variables.
 
-[![npm version](https://badgen.net/npm/v/@k4ys4r/wc-clock)](https://www.npmjs.com/package/@k4ys4r/wc-clock)
+[![npm version](https://img.shields.io/npm/v/%40k4ys4r%2Fwc-clock)](https://www.npmjs.com/package/@k4ys4r/wc-clock)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/@k4ys4r/wc-clock)
 [![GitHub License](https://img.shields.io/github/license/k4ys4r/wc-clock)](LICENSE)
 
