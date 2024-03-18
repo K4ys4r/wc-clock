@@ -1,0 +1,10 @@
+/node_modules
+/lib
+/tests
+/demo
+/utils
+tsconfig.json
+vite.config.js
+yarn.lock
+package-lock.json
+index.html

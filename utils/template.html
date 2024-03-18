@@ -1,0 +1,167 @@
+<style>
+  :host {
+    display: block;
+    --hours-hand-color: #b9b9b9;
+    --minutes-hand-color: #b9b9b9;
+    --seconds-hand-color: #ff3434;
+    --clock-background-color: #1a1a1aff;
+    --clock-color: #fff;
+    --clock-width: 10rem;
+    --seconds-hand-width: 1;
+    --seconds-hand-height: 4;
+    --minutes-hand-width: 6;
+    --minutes-hand-height: 4;
+    --hours-hand-width: 6;
+    --hours-hand-height: 3;
+    --clock-font-size: 1rem;
+    --clock-font: Arial, Helvetica, sans-serif;
+    --clock-hours-ticks-color: #fff;
+    --clock-minutes-ticks-color: #ffffff90;
+    --clock-hours-ticks-height: 0.45rem;
+    --clock-hours-ticks-width: 0.15rem;
+    --clock-minutes-ticks-height: 0.23rem;
+    --clock-minutes-ticks-width: 0.05rem;
+  }
+  .wc-clock__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--clock-font-family);
+    font-size: var(--clock-font-size);
+  }
+  .wc-clock__clock {
+    width: var(--clock-width);
+    height: var(--clock-width);
+    background: var(--clock-background-color);
+    border-radius: 50%;
+    box-shadow: 0 0 0.25rem var(--clock-background-color),
+      0 0 0.1em 0.2em #a9a9a9;
+    border: 0.1em solid var(--clock-background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .wc-clock__clock-labels {
+      > span {
+        position: absolute;
+        color: var(--clock-color);
+        transform: rotate(calc(30deg * var(--a)));
+        inset: 0.5em;
+        text-align: center;
+        > b {
+          display: flex;
+          justify-content: center;
+          transform: rotate(calc(-30deg * var(--a)));
+        }
+      }
+    }
+    .wc-clock__clock-ticks {
+      > span {
+        position: absolute;
+        transform: rotate(calc(6deg * var(--ta)));
+        text-align: center;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+      }
+      > span::before {
+        content: "";
+        width: var(--clock-tick-width);
+        height: var(--clock-tick-height);
+        border-radius: 0.1em;
+        background-color: var(--clock-tick-color, var(--clock-color));
+        align-self: flex-start;
+      }
+    }
+  }
+  .wc-clock__clock::before {
+    position: absolute;
+    content: "";
+    background-color: #fff;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+  }
+  .wc-clock__clock::after {
+    position: absolute;
+    content: "";
+    background-color: #fff;
+    box-shadow: 0 0 0 0.2rem var(--clock-background-color);
+    width: 0.2rem;
+    height: 0.2rem;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .wc-clock__clock-hand {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 1rem;
+    height: 1rem;
+    transform: rotate(360deg);
+    z-index: 1;
+    > i {
+      position: absolute;
+      width: calc(0.05em * var(--width));
+      height: calc(1em * var(--height));
+      background: var(--color);
+      border-radius: 100% 100% 50% 50%;
+      display: flex;
+      justify-content: center;
+    }
+    > i::before {
+      content: "";
+      position: absolute;
+      width: calc(0.05em * var(--width) + 0.1em);
+      height: calc(0.05em * var(--height) + 0.5em);
+      background: var(--color);
+      border-radius: 100% 100% 50% 50%;
+      transform: translate(0, 0.25em);
+    }
+    > i::after {
+      content: "";
+      position: absolute;
+      width: calc(0.05em * var(--width));
+      height: calc(0.1em * var(--height));
+      background: var(--color);
+      border-radius: 1rem 1rem 0.5rem 0.5rem;
+      top: 100%;
+    }
+  }
+</style>
+<div id="wc-clock__container" class="wc-clock__container">
+  <div id="wc-clock__clock" class="wc-clock__clock">
+    <div id="wc-clock__clock-minutes-hand" class="wc-clock__clock-hand">
+      <i
+        style="
+          --color: var(--minutes-hand-color);
+          --width: var(--minutes-hand-width);
+          --height: var(--minutes-hand-height);
+        "
+      ></i>
+    </div>
+    <div id="wc-clock__clock-hours-hand" class="wc-clock__clock-hand">
+      <i
+        style="
+          --color: var(--hours-hand-color);
+          --width: var(--hours-hand-width);
+          --height: var(--hours-hand-height);
+        "
+      ></i>
+    </div>
+    <div id="wc-clock__clock-seconds-hand" class="wc-clock__clock-hand">
+      <i
+        style="
+          --color: var(--seconds-hand-color);
+          --width: var(--seconds-hand-width);
+          --height: var(--seconds-hand-height);
+        "
+      ></i>
+    </div>
+
+    <div class="wc-clock__clock-labels" id="wc-clock__clock-labels"></div>
+    <div class="wc-clock__clock-ticks" id="wc-clock__clock-ticks"></div>
+  </div>
+</div>

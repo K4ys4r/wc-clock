@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Web Component</title>
+    <script type="module" src="./main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <article id="demo">
+      <h1>&#128337;Clock Web Component Demo&#128337;</h1>
+      <section>
+        <h2>Some examples with different attributes</h2>
+        <div class="clocks">
+          <div class="item">
+            <wc-clock> </wc-clock>
+            <span
+              >Default
+              <code class="code-view">
+                <span style="color: #808080">&lt;</span
+                ><span style="color: #569cd6">wc-clock</span
+                ><span style="color: #808080">&gt;</span
+                ><span style="color: #808080">&lt;/</span
+                ><span style="color: #569cd6">wc-clock</span
+                ><span style="color: #808080">&gt;</span>
+              </code>
+            </span>
+          </div>
+          <div class="item">
+            <wc-clock fixed-time> </wc-clock>
+            <span
+              >Fixed time
+              <code class="code-view">
+                <span style="color: #808080">&lt;</span
+                ><span style="color: #569cd6">wc-clock</span
+                ><span style="color: #cccccc"> </span
+                ><span style="color: #9cdcfe">fixed-time</span
+                ><span style="color: #808080">&gt;&lt;/</span
+                ><span style="color: #569cd6">wc-clock</span
+                ><span style="color: #808080">&gt;</span>
+              </code>
+            </span>
+          </div>
+          <div class="item">
+            <wc-clock hours-ticks></wc-clock>
+            <span
+              >Hours ticks
+              <code class="code-view">
+                <span style="color: #808080">&lt;</span
+                ><span style="color: #569cd6">wc-clock</span
+                ><span style="color: #cccccc"> </span
+                ><span style="color: #9cdcfe">hours-ticks</span
+                ><span style="color: #808080">&gt;&lt;/</span
+                ><span style="color: #569cd6">wc-clock</span
+                ><span style="color: #808080">&gt;</span>
+              </code>
+            </span>
+          </div>
+          <div class="item">
+            <wc-clock hours-ticks minutes-ticks></wc-clock>
+            <span
+              >Hours & minutes ticks
+              <code class="code-view">
+                <span style="color: #808080">&lt;</span
+                ><span style="color: #569cd6">wc-clock</span
+                ><span style="color: #cccccc"> </span
+                ><span style="color: #9cdcfe">hours-ticks</span
+                ><span style="color: #cccccc"> </span
+                ><span style="color: #9cdcfe">minutes-ticks</span
+                ><span style="color: #808080">&gt;&lt;/</span
+                ><span style="color: #569cd6">wc-clock</span
+                ><span style="color: #808080">&gt;</span>
+              </code>
+            </span>
+          </div>
+          <div class="item">
+            <wc-clock hours-ticks hours-labels></wc-clock>
+            <span
+              >Hours ticks & labels
+              <code class="code-view">
+                <span style="color: #808080">&lt;</span
+                ><span style="color: #569cd6">wc-clock</span
+                ><span style="color: #cccccc"> </span
+                ><span style="color: #9cdcfe">hours-ticks</span
+                ><span style="color: #cccccc"> </span
+                ><span style="color: #9cdcfe">hours-labels</span
+                ><span style="color: #808080">&gt;&lt;/</span
+                ><span style="color: #569cd6">wc-clock</span
+                ><span style="color: #808080">&gt;</span>
+              </code>
+            </span>
+          </div>
+          <div class="item">
+            <wc-clock time-zone="Australia/Perth"></wc-clock>
+            <span
+              >Time zone : Australia/Perth
+              <code class="code-view">
+                <span style="color: #808080">&lt;</span
+                ><span style="color: #569cd6">wc-clock</span
+                ><span style="color: #cccccc"> </span
+                ><span style="color: #9cdcfe">time-zone</span
+                ><span style="color: #cccccc">=</span
+                ><span style="color: #ce9178">"Australia/Perth"</span
+                ><span style="color: #808080">&gt;</span>
+                <span style="color: #808080">&lt;/</span
+                ><span style="color: #569cd6">wc-clock</span
+                ><span style="color: #808080">&gt;</span>
+              </code>
+            </span>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Demo of some CSS variables and HTML attributes</h2>
+        <div class="interactive">
+          <div class="form">
+            <div>
+              <label for="hours-ticks">Hours ticks</label>
+              <input id="hours-ticks" type="checkbox" />
+            </div>
+            <div>
+              <label for="min-ticks">Minutes ticks</label
+              ><input id="min-ticks" type="checkbox" />
+            </div>
+            <div>
+              <label for="fixed-time">Fixed Time (hh:mm:ss)</label
+              ><input id="fixed-time" type="text" />
+            </div>
+            <div>
+              <label for="hours-labels"
+                >Hours labels (with ',' separator i.e: 3,6,9,12)</label
+              ><input id="hours-labels" type="text" />
+            </div>
+            <div>
+              <label for="hours-labels">Time zone</label
+              ><select id="time-zone">
+                <option value="Europe/Paris">Europe: Paris</option>
+                <option value="Europe/London">Europe: London</option>
+                <option value="Europe/Moscow">Europe: Moscow</option>
+                <option value="Australia/Sydney">Australia: Sydney</option>
+                <option value="America/New_York">America: New_York</option>
+                <option value="Asia/Hong_Kong">Asia: Hong_Kong</option>
+                <option value="Asia/Riyadh">Asia: Riyadh</option>
+                <option value="Africa/Addis_Ababa">Africa: Addis Ababa</option>
+              </select>
+            </div>
+            <div>
+              <label for="bg-color">Background color</label
+              ><input id="bg-color" type="color" />
+            </div>
+            <div>
+              <label for="labels-color">Labels color</label
+              ><input id="labels-color" type="color" />
+            </div>
+            <div>
+              <label for="hour-hand-clr">Hour hand color</label
+              ><input id="hour-hand-clr" type="color" />
+            </div>
+            <div>
+              <label for="min-hand-clr">Minute hand color</label
+              ><input id="min-hand-clr" type="color" />
+            </div>
+            <div>
+              <label for="sec-hand-clr">Second hand color</label
+              ><input id="sec-hand-clr" type="color" />
+            </div>
+          </div>
+          <div class="render">
+            <wc-clock hours-labels id="active-clock"></wc-clock>
+          </div>
+        </div>
+      </section>
+    </article>
+    <footer>
+      <a href="https://github.com/k4ys4r/wc-clock.git" target="_blank">
+        <img
+          alt="View on Github"
+          src="https://img.shields.io/badge/View-1e1e1e?logo=github"
+        />
+      </a>
+      <a href="https://www.npmjs.com/package/@k4ys4r/wc-clock" target="_blank">
+        <img
+          alt="View on NPM"
+          src="https://img.shields.io/badge/View-1e1e1e?logo=npm"
+        />
+      </a>
+      <a
+        href="https://www.webcomponents.org/element/@k4ys4r/wc-clock"
+        target="_blank"
+      >
+        <img
+          alt="View on webcomponents.org"
+          src="https://img.shields.io/badge/View-1e1e1e?logo=webcomponents.org"
+        />
+      </a>
+      <a
+        href="https://stackblitz.com/edit/wc-clock-vuejs?file=src%2FApp.vue"
+        target="_blank"
+      >
+        <img
+          alt="Try it with VueJs"
+          src="https://img.shields.io/badge/Try%20it-1e1e1e?logo=vue.js"
+        />
+      </a>
+      <a
+        href="https://stackblitz.com/edit/wc-clock-reactjs?file=src%2FApp.jsx"
+        target="_blank"
+      >
+        <img
+          alt="Try it with ReactJs"
+          src="https://img.shields.io/badge/Try%20it-1e1e1e?logo=react"
+        />
+      </a>
+    </footer>
+  </body>
+</html>

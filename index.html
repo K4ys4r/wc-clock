@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Web Component</title>
+    <script type="module" src="../lib/index.js"></script>
+    <style>
+      wc-clock {
+        margin-bottom: 1em;
+        /* --hours-hand-color: #3434ff;
+        --minutes-hand-color: #34ff34; */
+        /* --seconds-hand-color: #ff3434;
+        --clock-background-color: #212121;
+        --clock-color: #fff;
+        --clock-width: 10rem;
+        --seconds-hand-width: 1;
+        --seconds-hand-height: 4;
+        --minutes-hand-width: 1.5;
+        --minutes-hand-height: 3;
+        --hours-hand-width: 2;
+        --hours-hand-height: 2.75;
+        --clock-font-size: 1rem;
+        --clock-font: Arial, Helvetica, sans-serif;
+        --clock-hours-ticks-color: #fff;
+        --clock-minutes-ticks-color: #ffffff90;
+        --clock-hours-ticks-height: 0.45rem;
+        --clock-hours-ticks-width: 0.15rem;
+        --clock-minutes-ticks-height: 0.23rem;
+        --clock-minutes-ticks-width: 0.05rem; */
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Clock Web Component Demo</h1>
+      <section>
+        <div>
+          <wc-clock time-zone="Australia/Perth"></wc-clock>
+          <wc-clock minutes-ticks hours-ticks fixed-time="10:10:25"></wc-clock>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script>
+    let div = document.createElement("div");
+    let timeZones = Intl.supportedValuesOf("timeZone");
+    div.style.display = "flex";
+    div.style.flexWrap = "wrap";
+    div.style.justifyContent = "center";
+    div.style.alignItems = "center";
+
+    document.body.append(div);
+    div.replaceChildren(
+      ...Array.from({ length: 10 }, (_, k) => k).map((i) => {
+        let div = document.createElement("div");
+        div.style.display = "flex";
+        div.style.justifyContent = "center";
+        div.style.alignItems = "center";
+        div.style.padding = "10px";
+        div.style.flexDirection = "column";
+        let timeZone = timeZones[Math.floor(Math.random() * timeZones.length)];
+        let wc = document.createElement("wc-clock");
+        wc.setAttribute("time-zone", timeZone);
+        div.append(wc);
+        div.append((document.createElement("span").textContent = timeZone));
+        return div;
+      })
+    );
+  </script>
+</html>
