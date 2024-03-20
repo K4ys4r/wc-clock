@@ -92,7 +92,6 @@ let wcClock = document.createElement(ClockComponent.tagName);
 wcClock.setAttribute(ClockComponent.attributes["fixed-time"], "");
 wcClock.setAttribute(ClockComponent.attributes["hours-labels"], [3, 6, 9, 12]);
 wcClock.setAttribute(ClockComponent.attributes["hours-ticks"], "");
-wcClock.setAttribute(ClockComponent.attributes["hours-ticks"], "");
 wcClock.setAttribute(ClockComponent.attributes["minutes-ticks"], "");
 
 // remove of attributes

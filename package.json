@@ -1,7 +1,7 @@
 {
   "name": "@k4ys4r/wc-clock",
   "version": "1.0.2",
-  "description": "a web component starter Vite + JS",
+  "description": "A web component, written in JS/HTML/CSS, for creating analog clocks.",
   "type": "module",
   "files": [
     "dist",
